@@ -1,5 +1,7 @@
 package sg.edu.np.week_6_whackamole_3_0;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class UserData {
@@ -16,8 +18,8 @@ public class UserData {
         4. A list of Levels related to a list of corresponding Scores
 
      */
-    private String MyUserName;
-    private String MyPassword;
+    String username;
+    String password;
     private ArrayList<Integer> Scores = new ArrayList<>();
     private ArrayList<Integer> Levels = new ArrayList<>();
 
@@ -26,8 +28,8 @@ public class UserData {
     }
 
     public UserData(String myUserName, String myPassword, ArrayList<Integer> myLevels, ArrayList<Integer> myScores) {
-        this.MyUserName = myUserName;
-        this.MyPassword = myPassword;
+        this.username = myUserName;
+        this.password = myPassword;
         this.Levels = myLevels;
         this.Scores = myScores;
     }
@@ -49,18 +51,24 @@ public class UserData {
     }
 
     public String getMyUserName() {
-        return this.MyUserName;
+        return this.username;
     }
 
     public void setMyUserName(String myUserName) {
-        this.MyUserName = myUserName;
+        this.username = myUserName;
     }
 
     public String getMyPassword() {
-        return this.MyPassword;
+        return this.password;
     }
 
     public void setMyPassword(String myPassword) {
-        this.MyPassword = myPassword;
+        this.password = myPassword;
+    }
+
+    public void addScore(Integer score, Integer levels){
+        Scores.add(score);
+        Levels.add(levels);
+        Log.v("User", "Initializing Score");
     }
 }
